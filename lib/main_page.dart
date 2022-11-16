@@ -1,7 +1,16 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 
-class QuizApp extends StatelessWidget {
+class QuizApp extends StatefulWidget {
   const QuizApp({super.key});
+
+  @override
+  State<QuizApp> createState() => _QuizAppState();
+}
+
+class _QuizAppState extends State<QuizApp> {
+  List<Icon> icons = [];
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +38,17 @@ class QuizApp extends StatelessWidget {
             const SizedBox(
               height: 80,
             ),
-            Container(
-              color: Colors.green,
-              height: 55,
-              width: 350,
-              child: const Center(
-                child: Text(
-                  'Верно',
-                  style: TextStyle(fontSize: 30, color: Colors.white),
+            InkWell(
+              onTap: () {},
+              child: Container(
+                color: Colors.green,
+                height: 55,
+                width: 350,
+                child: const Center(
+                  child: Text(
+                    'Верно',
+                    style: TextStyle(fontSize: 30, color: Colors.white),
+                  ),
                 ),
               ),
             ),
