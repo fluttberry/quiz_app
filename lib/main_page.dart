@@ -1,5 +1,3 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 
 class QuizApp extends StatefulWidget {
@@ -10,7 +8,7 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
-  List<Icon> icons = [];
+  List<Icon> icons = <Icon>[];
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +37,16 @@ class _QuizAppState extends State<QuizApp> {
               height: 80,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                setState(() {});
+                icons.add(
+                  const Icon(
+                    Icons.check,
+                    color: Colors.green,
+                    size: 40,
+                  ),
+                );
+              },
               child: Container(
                 color: Colors.green,
                 height: 55,
@@ -56,14 +63,26 @@ class _QuizAppState extends State<QuizApp> {
             SizedBox(
               height: 20,
             ),
-            Container(
-              color: Colors.red,
-              height: 55,
-              width: 350,
-              child: const Center(
-                child: Text(
-                  'Неверно',
-                  style: TextStyle(fontSize: 30, color: Colors.white),
+            InkWell(
+              onTap: () {
+                setState(() {});
+                icons.add(
+                  const Icon(
+                    Icons.clear,
+                    color: Colors.red,
+                    size: 40,
+                  ),
+                );
+              },
+              child: Container(
+                color: Colors.red,
+                height: 55,
+                width: 350,
+                child: const Center(
+                  child: Text(
+                    'Неверно',
+                    style: TextStyle(fontSize: 30, color: Colors.white),
+                  ),
                 ),
               ),
             ),
@@ -72,22 +91,7 @@ class _QuizAppState extends State<QuizApp> {
               height: 70,
             ),
             // ignore: prefer_const_literals_to_create_immutables
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              // ignore: prefer_const_literals_to_create_immutables
-              children: [
-                const Icon(
-                  Icons.check,
-                  color: Colors.green,
-                  size: 40,
-                ),
-                const Icon(
-                  Icons.clear,
-                  color: Colors.red,
-                  size: 40,
-                )
-              ],
-            )
+            Row(children: icons)
           ],
         ));
   }
