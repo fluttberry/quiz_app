@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/local_data/local_data.dart';
 
 class QuizApp extends StatefulWidget {
   const QuizApp({super.key});
@@ -27,9 +28,9 @@ class _QuizAppState extends State<QuizApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            const Text('Flutter - это фреймворк?',
+            Text(LocalData().surooAlipKel(),
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 45,
                   color: Colors.white,
                 )),
