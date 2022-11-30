@@ -28,7 +28,9 @@ class _QuizAppState extends State<QuizApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            Text(LocalData().surooAlipKel(),
+            Text(
+                //
+                localData.surooAlipKel(),
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 45,
@@ -40,6 +42,8 @@ class _QuizAppState extends State<QuizApp> {
             InkWell(
               onTap: () {
                 setState(() {});
+                // LocalData().suroonuOtkoz();
+                localData.suroonuOtkoz();
                 icons.add(
                   const Icon(
                     Icons.check,
@@ -67,6 +71,8 @@ class _QuizAppState extends State<QuizApp> {
             InkWell(
               onTap: () {
                 setState(() {});
+                // LocalData().suroonuOtkoz();
+                localData.suroonuOtkoz();
                 icons.add(
                   const Icon(
                     Icons.clear,

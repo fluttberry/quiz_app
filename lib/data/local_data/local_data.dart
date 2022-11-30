@@ -1,7 +1,7 @@
 import 'package:quiz_app/model/quiz_model.dart';
 
 class LocalData {
-  int katarNomer = 1;
+  int katarNomer = 0;
   List<QuizModel> suroolorJooptor = [
     QuizModel(suroolor: 'Flutter - это фреймворк?', jooptor: true),
     QuizModel(suroolor: 'Flutter - это игра?', jooptor: false),
@@ -14,4 +14,11 @@ class LocalData {
   bool joopalipKel() {
     return suroolorJooptor[katarNomer].jooptor;
   }
+
+  int suroonuOtkoz() {
+    return katarNomer = katarNomer + 1;
+    // katarNomer++;
+  }
 }
+
+final LocalData localData = LocalData();
